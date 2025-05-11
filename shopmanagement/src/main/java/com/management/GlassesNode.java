@@ -119,4 +119,29 @@ public class GlassesNode {
         return this.color;
     }
 
+//------------------------------------------MISC--------------------------------------------
+
+    /**
+     * This is used to compare two GlassessNodes to eachother
+     * will produce a boolean as a result and returned
+     * only accepts nodes and not the node values so you have to wrap it in a node first
+     * @param other
+     * @return
+     */
+    public Boolean compareValues(GlassesNode other){
+        // variables
+        Boolean returnValue = false; // the return value; default fail
+
+        // compares all the values in the node to the node that was given
+        if(other.getBrand().compareTo(this.brand) == 0 && other.getId().compareTo(id) == 0
+        && other.getLensesSize() == this.lensesSize && other.getBridgeSize() == this.bridgeSize
+        && other.getColor().compareTo(this.color) == 0){
+            // if all the values match then it will change the return value to true
+            returnValue = true; 
+        }
+
+        // return statement
+        return returnValue;
+    }
+
 }
